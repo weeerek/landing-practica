@@ -12,7 +12,6 @@
 </head>
 <body class="bg-white text-gray-800">
 
-    <!-- NAVBAR -->
     <nav class="fixed top-0 w-full bg-white border-b border-gray-100 z-50">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
 
@@ -48,7 +47,6 @@
                 </a>
             </div>
 
-            <!-- Hamburger mobil -->
             <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                 <span class="w-6 h-0.5 bg-black block"></span>
                 <span class="w-6 h-0.5 bg-black block"></span>
@@ -56,20 +54,22 @@
             </button>
         </div>
 
-        <!-- Meniu mobil -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
-            <a href="#" class="text-sm text-black hover:text-gray-500">Home</a>
-            <a href="#about" class="text-sm text-black hover:text-gray-500">About</a>
-            <a href="#resources" class="text-sm text-black hover:text-gray-500">Resources</a>
-            <a href="#contact" class="text-sm text-black hover:text-gray-500">Contact</a>
+            <a href="#" id="nav_home_mobile" class="text-sm text-black hover:text-gray-500">Home</a>
+            <a href="#about" id="nav_about_mobile" class="text-sm text-black hover:text-gray-500">About</a>
+            <a href="#resources" id="nav_resources_mobile" class="text-sm text-black hover:text-gray-500">Resources</a>
+            <a href="#contact" id="nav_contact_mobile" class="text-sm text-black hover:text-gray-500">Contact</a>
             <div class="flex gap-3 pt-2">
                 <a href="#" id="nav_login_mobile" class="border border-gray-300 text-black px-4 py-2 rounded-full text-sm">Login</a>
                 <a href="#contact" id="nav_started_mobile" class="bg-green-500 text-white px-4 py-2 rounded-full text-sm">Get started</a>
             </div>
+            <button onclick="toggleLang()" id="lang_btn_mobile"
+                class="w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:border-gray-400 transition text-xs font-bold">
+                RO
+            </button>
         </div>
     </nav>
 
-    <!-- HERO -->
     <section class="pt-32 pb-16 bg-white">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <h1 id="hero_title" class="text-3xl md:text-5xl font-bold text-black leading-tight mb-4">
@@ -97,7 +97,6 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALE -->
     <section class="py-16 bg-white">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <h2 id="test_title" class="text-2xl font-bold text-black mb-3">What our clients say</h2>
@@ -148,7 +147,6 @@
         </div>
     </section>
 
-    <!-- SERVICII -->
     <section id="resources" class="py-16 bg-white">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <h2 id="serv_title" class="text-3xl font-bold text-black mb-3">Our Services</h2>
@@ -187,7 +185,6 @@
         </div>
     </section>
 
-    <!-- DEMO -->
     <section id="about" class="py-16 bg-white">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-12">
@@ -219,7 +216,6 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="py-16 bg-white overflow-hidden">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row gap-12 items-start">
 
@@ -278,7 +274,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="bg-white border-t border-gray-100 py-8">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-2">
@@ -289,7 +284,6 @@
         </div>
     </footer>
 
-    <!-- Buton Admin -->
     <a href="admin.php" id="admin_btn"
        class="fixed bottom-6 right-6 bg-white border border-gray-200 text-gray-500 px-4 py-2 rounded-full text-sm font-medium shadow-md hover:shadow-lg hover:text-gray-800 transition z-50">
         🔒 Admin
@@ -300,6 +294,9 @@ const translations = {
     en: {
         nav_home: "Home", nav_about: "About", nav_resources: "Resources",
         nav_contact: "Contact", nav_login: "Login", nav_started: "Get started",
+        nav_home_mobile: "Home", nav_about_mobile: "About",
+        nav_resources_mobile: "Resources", nav_contact_mobile: "Contact",
+        nav_login_mobile: "Login", nav_started_mobile: "Get started",
         hero_title: "Sophisticated Designs<br>for Modern Living",
         hero_sub1: "Elegant Designs, Exceptional Results,",
         hero_sub2: "Elevating Your Home's Aesthetic.",
@@ -326,11 +323,14 @@ const translations = {
         contact_msg: "Please type your message here...",
         contact_btn: "Send message",
         footer_copy: "© 2025 ElegantInteriors. All rights reserved.",
-        admin_btn: "🔒 Admin", lang_btn: "RO"
+        admin_btn: "🔒 Admin", lang_btn: "RO", lang_btn_mobile: "RO"
     },
     ro: {
         nav_home: "Acasă", nav_about: "Despre", nav_resources: "Servicii",
         nav_contact: "Contact", nav_login: "Autentificare", nav_started: "Începe acum",
+        nav_home_mobile: "Acasă", nav_about_mobile: "Despre",
+        nav_resources_mobile: "Servicii", nav_contact_mobile: "Contact",
+        nav_login_mobile: "Autentificare", nav_started_mobile: "Începe acum",
         hero_title: "Designuri Sofisticate<br>pentru Locuințe Moderne",
         hero_sub1: "Designuri Elegante, Rezultate Excepționale,",
         hero_sub2: "Ridicând Estetica Casei Tale.",
@@ -357,7 +357,7 @@ const translations = {
         contact_msg: "Scrie mesajul tău aici...",
         contact_btn: "Trimite mesajul",
         footer_copy: "© 2025 ElegantInteriors. Toate drepturile rezervate.",
-        admin_btn: "🔒 Admin", lang_btn: "EN"
+        admin_btn: "🔒 Admin", lang_btn: "EN", lang_btn_mobile: "EN"
     }
 };
 
@@ -366,11 +366,13 @@ let currentLang = localStorage.getItem('lang') || 'en';
 function applyLang(lang) {
     const t = translations[lang];
     const ids = ['nav_home','nav_about','nav_resources','nav_contact','nav_login',
-        'nav_started','nav_login_mobile','nav_started_mobile','hero_title','hero_sub1',
-        'hero_sub2','hero_btn','test_title','test_sub','test1_text','test2_text',
-        'test3_text','serv_title','serv_sub','serv1_text','serv2_text','serv3_text',
-        'demo_label','demo_title','demo_sub','demo_text','demo_name','contact_label',
-        'contact_title','contact_sub','contact_btn','footer_copy','admin_btn','lang_btn'];
+        'nav_started','nav_home_mobile','nav_about_mobile','nav_resources_mobile',
+        'nav_contact_mobile','nav_login_mobile','nav_started_mobile','hero_title',
+        'hero_sub1','hero_sub2','hero_btn','test_title','test_sub','test1_text',
+        'test2_text','test3_text','serv_title','serv_sub','serv1_text','serv2_text',
+        'serv3_text','demo_label','demo_title','demo_sub','demo_text','demo_name',
+        'contact_label','contact_title','contact_sub','contact_btn','footer_copy',
+        'admin_btn','lang_btn','lang_btn_mobile'];
 
     ids.forEach(id => {
         const el = document.getElementById(id);
