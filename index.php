@@ -20,7 +20,7 @@
                 <img src="img/ElegantInteriors.svg" alt="" class="h-5">
             </div>
 
-            <ul class="hidden md:flex gap-8 text-sm text-black items-center">
+            <ul class="hidden lg:flex gap-8 text-sm text-black items-center">
                 <li><a href="#" id="nav_home" class="hover:text-gray-500 transition">Home</a></li>
                 <li><a href="#about" id="nav_about" class="hover:text-gray-500 transition">About</a></li>
                 <li>
@@ -34,7 +34,7 @@
                 <li><a href="#contact" id="nav_contact" class="hover:text-gray-500 transition">Contact</a></li>
             </ul>
 
-            <div class="hidden md:flex items-center gap-3">
+            <div class="hidden lg:flex items-center gap-3">
                 <button onclick="toggleLang()" id="lang_btn"
                     class="w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:border-gray-400 transition text-xs font-bold">
                     RO
@@ -47,14 +47,14 @@
                 </a>
             </div>
 
-            <button class="md:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <button class="lg:hidden flex flex-col gap-1.5 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                 <span class="w-6 h-0.5 bg-black block"></span>
                 <span class="w-6 h-0.5 bg-black block"></span>
                 <span class="w-6 h-0.5 bg-black block"></span>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
             <a href="#" id="nav_home_mobile" class="text-sm text-black hover:text-gray-500">Home</a>
             <a href="#about" id="nav_about_mobile" class="text-sm text-black hover:text-gray-500">About</a>
             <a href="#resources" id="nav_resources_mobile" class="text-sm text-black hover:text-gray-500">Resources</a>
